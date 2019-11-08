@@ -27,10 +27,10 @@ class Categories(models.Model):
         self.delete()
 
 
-# class Image(models.Model):
-#     name = models.CharField(max_length = 30)
-#     Description = models.TextField()
-#     location = models.ForeignKey(Location)
-#     category = models.ManyToManyField(Categorys, default = True)
-#     pub_date = models.DateTimeField(auto_now_add=True, null=True)
-#     Image_image = models.ImageField(upload_to = 'images/')
+class Image(models.Model):
+    name = models.CharField(max_length = 30)
+    Description = models.TextField()
+    location = models.ForeignKey(Location)
+    category = models.ManyToManyField(Categorys, default = True)
+    pub_date = models.DateTimeField(auto_now_add=True, null=True)
+    Image_image = models.ImageField(upload_to = 'images/')
