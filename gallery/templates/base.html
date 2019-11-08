@@ -1,0 +1,15 @@
+< e <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title%}
+    <title>My photo gallery-{{title}}</title>
+    {%else%}
+    <title>Dickson's Photo Gallery</title>
+    {% endif%}
+</head>
+<body>
+  {% block content %}
+  {% endblock %}  
+</body>
+</html>
