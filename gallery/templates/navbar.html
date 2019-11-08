@@ -36,6 +36,19 @@
                     {% endfor %}
                 </div>
             </li>
+            <div class="col-sm-4 col-md-4 navbar-right">
+
+                <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+    
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search Image" name="image">
+                        <div class="input-group-btn" style="margin-right:10px;">
+                            <button class="btn btn-outline-primary btn-sm" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+    
+                </form>
+            </div>
        </div>
    </nav>
 </body>
