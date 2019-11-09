@@ -14,23 +14,48 @@ class Location(models.Model):
     def delete_location(self):
         self.delete()
 
-class Categories(models.Model):
+class Categorys(models.Model):
     name = models.CharField(max_length=30)
     def __str__(self):
         return self.name
+
     class meta:
         ordering=['name']
     
     def save_category(self):
         self.save()
-    def delete_location(self):
+
+    def delete_(self):
         self.delete()
 
 
 class Image(models.Model):
     name = models.CharField(max_length = 30)
-    Description = models.TextField()
+    description = models.TextField()
     location = models.ForeignKey(Location)
     category = models.ManyToManyField(Categorys, default = True)
     pub_date = models.DateTimeField(auto_now_add=True, null=True)
     Image_image = models.ImageField(upload_to = 'images/')
+
+    def __str__(self):
+        return self.name
+    
+    class meta:
+        ordering = ['name']
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
+
+    @classmethod
+    def photos_images(cls):
+        gallery = cls.objects.all()
+        return gallery
+
+    @classmethod
+    def search_by_category(cls,search_term):
+        gallery = cls.objects.filter(category__name__icontains=search_term)
+        return gallery
+    
