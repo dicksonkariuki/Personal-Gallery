@@ -63,12 +63,18 @@ class LocationTestClass(TestCase):
         new = Location.objects.filter(name='New').update(name='outdated')
         loc = Location.objects.get(name='outdated')
         self.assertEqual(loc.name,'outdated') 
-    def CategorysTestClass(TestCase):
+class CategorysTestClass(TestCase):
         '''
     test setup of Categorys
     '''
     def setUp(self):
         self.New = Categorys(name='New')
+     '''
+    test instance of category
+    '''
+    def test_instance(self):
+        self.assertTrue(isinstance(self.New,Categorys))
+
 
 
 # Create your tests here.
