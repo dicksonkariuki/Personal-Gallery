@@ -19,10 +19,10 @@ def convert_dates(dates):
     return day
 
 def image_today(request):
-    gallery = Image.gallery_images()
+    photos = Image.photos_images()
     category= Categorys.objects.all()
     location= Location.objects.all()
-    return render(request,'all-images/gallery-images.html',{"gallery":gallery,'category':category,"location":location})
+    return render(request,'all-images/gallery-images.html',{"photos":photos,'category':category,"location":location})
 
 def search_results(request):
     category= Categorys.objects.all()
