@@ -40,5 +40,13 @@ class LocationTestClass(TestCase):
     """
     def test_instance(self):
         self.assertTrue(isinstance(self.New,Location))
+    '''
+    test to assertain save Location
+    '''
+    def test_save_location(self):
+        self.New.save_location()
+        loc = Location.objects.all()
+        self.assertTrue(len(loc)>0)
+    
 
 # Create your tests here.
