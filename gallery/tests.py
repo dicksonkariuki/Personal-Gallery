@@ -1,6 +1,6 @@
 from django.test import TestCase
 import datetime as dt
-from .models import Image,Category,Location
+from .models import Image,Categorys,Location
 
 class ImageTestClass(TestCase):
     """
@@ -11,7 +11,15 @@ class ImageTestClass(TestCase):
     """
     Test instance of image
     """
-    def test_instance(self)
+    def test_instance(self):
         self.assertTrue(isinstance(self.depic,Image))
+    """
+    Test to delete image
+    """
+    def test_delete_image(self):
+        self.depic.save_image()
+        self.depic.delete_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images)==0)
 
 # Create your tests here.
