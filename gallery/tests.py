@@ -21,5 +21,9 @@ class ImageTestClass(TestCase):
         self.depic.delete_image()
         images = Image.objects.all()
         self.assertTrue(len(images)==0)
+    def test_save_image(self):
+        self.depic.save_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images)>0)
 
 # Create your tests here.
