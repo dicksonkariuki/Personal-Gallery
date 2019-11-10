@@ -33,7 +33,7 @@ class LocationTestClass(TestCase):
     """
     Setup for location class test
     """
-    def Setup(self):
+    def SetUp(self):
         self.New=Location(name ='New')
     """
     Test for location instance
@@ -45,10 +45,10 @@ class LocationTestClass(TestCase):
     '''
     def test_save_location(self):
         self.New.save_location()
-        loc = Location.objects.all()
-        self.assertTrue(len(loc)>0)
+        locate = Location.objects.all()
+        self.assertTrue(len(locate)>0)
     '''
-    test to confirm delete is working
+    test to check delete is working
     '''
     def test_delete_location(self):
         self.New.save_location()
@@ -60,16 +60,16 @@ class LocationTestClass(TestCase):
     '''
     def test_update_location(self):
         self.New.save_location()
-        new = Location.objects.filter(name='New').update(name='outdated')
-        loc = Location.objects.get(name='outdated')
-        self.assertEqual(loc.name,'outdated') 
+        New = Location.objects.filter(name='New').update(name='outdated')
+        locate = Location.objects.get(name='outdated')
+        self.assertEqual(locate.name,'outdated') 
 class CategorysTestClass(TestCase):
-        '''
+    '''
     test setup of Categorys
     '''
     def setUp(self):
         self.New = Categorys(name='New')
-     '''
+    '''
     test instance of category
     '''
     def test_instance(self):
@@ -79,24 +79,24 @@ class CategorysTestClass(TestCase):
     '''
     def test_save_category(self):
         self.New.save_category()
-        cat = Categorys.objects.all()
-        self.assertTrue(len(cat)>0)
+        catego = Categorys.objects.all()
+        self.assertTrue(len(catego)>0)
     '''
     test to assert that delete is working
     '''
     def test_delete_category(self):
         self.New.save_category()
         self.New.delete_category()
-        cat = Categorys.objects.all()
-        self.assertTrue(len(cat)== 0)
+        catego = Categorys.objects.all()
+        self.assertTrue(len(catego)== 0)
     '''
     test to assert that categorys update
     '''
     def test_update_category(self):
         self.New.save_category()
-        new = Categorys.objects.filter(name='New').update(name='outdated')
-        cat = Categorys.objects.get(name='outdated')
-        self.assertEqual(cat.name,'outdated') 
+        New = Categorys.objects.filter(name='New').update(name='outdated')
+        catego = Categorys.objects.get(name='outdated')
+        self.assertEqual(catego.name,'outdated') 
 
 
 

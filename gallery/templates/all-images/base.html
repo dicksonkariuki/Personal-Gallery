@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="{% static 'css/basegalla.css' %}">
+  <link rel="stylesheet" href="{% static 'css/basegallery.css' %}">
   <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Kaushan+Script" rel="stylesheet">
   <script src="dist/clipboard.min.js"></script>
   {% endblock %}
@@ -27,13 +27,13 @@
 
 <body>
   {% include "navbar.html" %}
-  
   {% block content %}
   {% endblock %}
   {% block scripts %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   {% bootstrap_javascript %}
-  <link rel="stylesheet" href="{% static 'js/basegalla.js' %}">
+  <link rel="stylesheet" href="{% static 'js/basegallery.js' %}">
+  {% include "footer.html" %}
   {% endblock %}
 </body>
 
