@@ -55,6 +55,13 @@ class LocationTestClass(TestCase):
         self.New.delete_location()
         loc = Location.objects.all()
         self.assertTrue(len(loc)== 0)
-
+    '''
+    test to ensure Location update
+    '''
+    def test_update_location(self):
+        self.New.save_location()
+        new = Location.objects.filter(name='New').update(name='outdated')
+        loc = Location.objects.get(name='outdated')
+        self.assertEqual(loc.name,'outdated')  
 
 # Create your tests here.
