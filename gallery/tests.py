@@ -89,7 +89,14 @@ class CategorysTestClass(TestCase):
         self.New.delete_category()
         cat = Categorys.objects.all()
         self.assertTrue(len(cat)== 0)
-
+    '''
+    test to assert that categorys update
+    '''
+    def test_update_category(self):
+        self.New.save_category()
+        new = Categorys.objects.filter(name='New').update(name='outdated')
+        cat = Categorys.objects.get(name='outdated')
+        self.assertEqual(cat.name,'outdated') 
 
 
 
