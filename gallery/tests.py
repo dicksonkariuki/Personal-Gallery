@@ -25,5 +25,9 @@ class ImageTestClass(TestCase):
         self.depic.save_image()
         images = Image.objects.all()
         self.assertTrue(len(images)>0)
+        
+    def test_get_image_today(self):
+        today_images = Image.todays_images()
+        self.assertTrue(len(today_images)>0)
 
 # Create your tests here.
