@@ -81,6 +81,15 @@ class CategorysTestClass(TestCase):
         self.New.save_category()
         cat = Categorys.objects.all()
         self.assertTrue(len(cat)>0)
+    '''
+    test to assert that delete is working
+    '''
+    def test_delete_category(self):
+        self.New.save_category()
+        self.New.delete_category()
+        cat = Categorys.objects.all()
+        self.assertTrue(len(cat)== 0)
+
 
 
 
