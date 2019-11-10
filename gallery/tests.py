@@ -7,6 +7,11 @@ class ImageTestClass(TestCase):
     Creating an instance of Image
     """
     def setUp(self):
-        self.pic = Image(name ='Movie',description='Watching movies is the best way to spend free time')
+        self.depic = Image(name ='Movie',description='Watching movies is the best way to spend free time')
+    """
+    Test instance of image
+    """
+    def test_instance(self)
+        self.assertTrue(isinstance(self.depic,Image))
 
 # Create your tests here.
