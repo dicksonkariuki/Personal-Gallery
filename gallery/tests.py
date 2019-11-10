@@ -35,5 +35,10 @@ class LocationTestClass(TestCase):
     """
     def Setup(self):
         self.New=Location(name ='New')
+    """
+    Test for location instance
+    """
+    def test_instance(self):
+        self.assertTrue(isinstance(self.New,Location))
 
 # Create your tests here.
