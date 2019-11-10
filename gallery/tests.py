@@ -47,7 +47,7 @@ class LocationTestClass(TestCase):
         self.New.save_location()
         loc = Location.objects.all()
         self.assertTrue(len(loc)>0)
-     '''
+    '''
     test to confirm delete is working
     '''
     def test_delete_location(self):
@@ -62,6 +62,13 @@ class LocationTestClass(TestCase):
         self.New.save_location()
         new = Location.objects.filter(name='New').update(name='outdated')
         loc = Location.objects.get(name='outdated')
-        self.assertEqual(loc.name,'outdated')  
+        self.assertEqual(loc.name,'outdated') 
+    def CategorysTestClass(TestCase):
+        '''
+    test setup of Categorys
+    '''
+    def setUp(self):
+        self.New = Categorys(name='New')
+
 
 # Create your tests here.
