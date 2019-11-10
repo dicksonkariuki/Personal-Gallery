@@ -125,11 +125,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# static files settings
 STATIC_URL = '/static/'
+#Location to store static files and bootstrap
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+# Location where django collect all static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # configuring the location for media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
