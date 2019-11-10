@@ -1,4 +1,4 @@
-<nav class="navbar bg-primary">
+<nav class="navbar navbar bg-primary">
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="{% url 'imageToday' %}" style="font-size: 20px; color:whitesmoke;">Awesome Gallery</a>
@@ -37,9 +37,9 @@
             <form class="navbar-form" role="search" action="{% url 'search_results' %}">
 
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search Image" name="image">
-                    <div class="input-group-btn" style="margin-right:10px;">
-                        <button class="btn btn-outline-primary btn-sm" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    <input type="text" class="form-control form-rounded" placeholder="Search Image" name="image">
+                    <div class="input-group-btn" style="margin-right:50px;">
+                        <button class="btn btn-outline-light btn-sm btn-circle.btn-xl" style = "margin-left:2px"type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
                 </div>
 
