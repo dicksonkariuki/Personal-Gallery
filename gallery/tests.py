@@ -34,33 +34,33 @@ class LocationTestClass(TestCase):
     Setup for location class test
     """
     def SetUp(self):
-        self.New=Location(name ='New')
+        self.Nairobi=Location(name ='Nairobi')
     """
     Test for location instance
     """
     def test_instance(self):
-        self.assertTrue(isinstance(self.New,Location))
+        self.assertTrue(isinstance(self.Nairobi,Location))
     '''
     test to assertain save Location
     '''
     def test_save_location(self):
-        self.New.save_location()
+        self.Nairobi.save_location()
         locate = Location.objects.all()
         self.assertTrue(len(locate)>0)
     '''
     test to check delete is working
     '''
     def test_delete_location(self):
-        self.New.save_location()
-        self.New.delete_location()
+        self.Nairobi.save_location()
+        self.Nairobi.delete_location()
         loc = Location.objects.all()
         self.assertTrue(len(loc)== 0)
     '''
     test to ensure Location update
     '''
     def test_update_location(self):
-        self.New.save_location()
-        New = Location.objects.filter(name='New').update(name='outdated')
+        self.Nairobi.save_location()
+        Nairobi= Location.objects.filter(name='Nairobi').update(name='outdated')
         locate = Location.objects.get(name='outdated')
         self.assertEqual(locate.name,'outdated') 
 class CategorysTestClass(TestCase):
